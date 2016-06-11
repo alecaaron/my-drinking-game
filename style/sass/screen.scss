@@ -1,0 +1,90 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+$full: 100%;
+
+@mixin material_level($level, $color){
+        -webkit-box-shadow: 4px 12px (10px * $level) 4px $color;
+        box-shadow: 4px 12px (10px * $level) 4px $color;
+}
+
+
+body{
+    height: $full;
+    width: $full;
+    background: #7fffd4;
+    font-size: 100%;
+    font-family: 'Roboto';
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.17rem; }
+    h4 { font-size: 1.12rem; }
+    h5 { font-size: .83rem; }
+    h6 { font-size: .75rem; }
+    
+    #wrapper{
+        height: 36rem;
+        width: 36rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5rem;
+        h1{
+            width: $full;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        section#board{
+            width: 100%;
+            height: 27rem;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: white;
+            @include material_level(7.5, #444);
+            border: none;
+            section#image{
+                background-color: brown;
+                padding: none !important;
+                width: $full;
+                height: 70%;
+                img{
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+            #rules{
+                width: 20rem;
+                height: 3rem;
+                margin-left: 1rem;
+                margin-top: .75rem;
+                
+                h2{
+                    font-weight: 700;
+                    margin-bottom: 1rem;
+                    //font-size: 150%;
+                }
+                
+                p{
+                    line-height: 1.25rem;
+                }
+            }       
+        }
+        #shuffle_button{
+            border: none;
+            display: block;
+            width: 5rem;
+            height: 3rem;
+            font-size: 1.5rem;
+            margin-top: 3rem;
+            margin-left: auto;
+            margin-right: auto;
+            @include material_level(4, #444);
+        }
+
+
+    }
+}
