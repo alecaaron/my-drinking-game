@@ -8,15 +8,15 @@
 $full: 100%;
 
 @mixin material_level($level, $color){
-        -webkit-box-shadow: 4px 12px (10px * $level) 4px $color;
-        box-shadow: 4px 12px (10px * $level) 4px $color;
+        -webkit-box-shadow: 4px 4px (10px * $level) 4px $color;
+        box-shadow: 4px 4px (10px * $level) 4px $color;
 }
 
 
 body{
     height: $full;
     width: $full;
-    background: #7fffd4;
+    background: #bdc3c7;
     font-size: 100%;
     font-family: 'Roboto';
     h1 { font-size: 2rem; }
@@ -25,13 +25,13 @@ body{
     h4 { font-size: 1.12rem; }
     h5 { font-size: .83rem; }
     h6 { font-size: .75rem; }
-    
+
     #wrapper{
         height: 36rem;
         width: 36rem;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 5rem;
+        margin-top: 1rem;
         h1{
             width: $full;
             text-align: center;
@@ -39,52 +39,64 @@ body{
         }
         section#board{
             width: 100%;
-            height: 27rem;
+            height: 24rem;
             margin-left: auto;
             margin-right: auto;
             background-color: white;
-            @include material_level(7.5, #444);
             border: none;
             section#image{
                 background-color: brown;
                 padding: none !important;
                 width: $full;
-                height: 70%;
+                height: 17rem;
+                overflow: hidden;
                 img{
                     display: block;
                     margin-left: auto;
                     margin-right: auto;
+                    width: $full;
                 }
             }
             #rules{
                 width: 20rem;
                 height: 3rem;
+                border-bottom: white solid 2rem;
                 margin-left: 1rem;
                 margin-top: .75rem;
-                
+
                 h2{
                     font-weight: 700;
                     margin-bottom: 1rem;
-                    //font-size: 150%;
                 }
-                
+
                 p{
                     line-height: 1.25rem;
                 }
-            }       
+            }
         }
         #shuffle_button{
-            border: none;
+            border-radius: 10rem;
+            border: 3px solid #1abc9c;
+            color: #1abc9c;
+            background: none;
             display: block;
-            width: 5rem;
+            width: 10rem;
             height: 3rem;
             font-size: 1.5rem;
-            margin-top: 3rem;
+            margin-top: 1rem;
             margin-left: auto;
             margin-right: auto;
-            @include material_level(4, #444);
+
         }
 
 
     }
+}
+.even{
+  color: #16a085;
+  font-weight: bold;
+}
+.odd{
+  color: #e74c3c;
+  font-weight: bold;
 }
